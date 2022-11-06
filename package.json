@@ -1,5 +1,6 @@
 {
   "name": "arship",
+  "description": "Headless CMS for documenting a corporate application development",
   "version": "0.1.0",
   "private": true,
   "scripts": {
