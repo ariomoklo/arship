@@ -3,16 +3,21 @@ import { cva } from 'class-variance-authority'
 import { useSession } from 'next-auth/react'
 import React from 'react'
 import { btn } from './ui/button'
+import { IChevronRight } from './ui/icons'
 
 const item = cva(
-  'w-full uppercase text-base-900 dark:text-white px-4 first:pt-2', {
+  'w-full text-base-900 dark:text-white', {
     variants: {
       type: {
-        label: 'text-xs font-medium uppercase py-2 border-b border-b-base-200 dark:border-b-base-700',
-        item: 'text-sm px-4 py-2 hover:bg-base-900 hover:text-white dark:hover:bg-base-700'
+        label: 'uppercase text-[10px] font-medium px-4 pt-2 pb-1',
+        item: 'cursor-pointer text-sm px-4 py-1 hover:bg-base-800 hover:text-white dark:hover:bg-base-700'
       }
     }
   }
+)
+
+const content = cva(
+  'flex flex-col text-base-900 bg-white dark:bg-base-800 border border-base-200 dark:border-base-800 shadow-lg min-w-[220px] p-1'
 )
 
 const ProfileMenu: React.FC = () => {
@@ -26,14 +31,36 @@ const ProfileMenu: React.FC = () => {
       </Dropdown.Trigger>
 
       <Dropdown.Portal className='z-30'>
-        <Dropdown.Content align='end' className='flex flex-col text-base-900 bg-white dark:bg-base-800 shadow-lg min-w-[220px] p-1'>
-          <Dropdown.Label className={item({ type: 'label' })} asChild>
-            <label>Label</label>
-          </Dropdown.Label>
+        <Dropdown.Content align='end' className={content()}>
+
           <Dropdown.Item asChild className={item({ type: 'item' })}>
-            <a href="#">Item</a>
+            <a href="#">Account Setting</a>
           </Dropdown.Item>
 
+          <Dropdown.Item asChild className={item({ type: 'item' })}>
+            <a href="#">Sign Out</a>
+          </Dropdown.Item>
+
+          <Dropdown.Separator className='my-1 border-b border-b-base-200 dark:border-b-base-700' />
+
+          <Dropdown.Label className={item({ type: 'label' })} asChild>
+            <label>Administrator</label>
+          </Dropdown.Label>
+          <Dropdown.Item asChild className={item({ type: 'item' })}>
+            <a href="#">Create new app</a>
+          </Dropdown.Item>
+          <Dropdown.Item asChild className={item({ type: 'item' })}>
+            <a href="#">Create new group</a>
+          </Dropdown.Item>
+          <Dropdown.Item asChild className={item({ type: 'item' })}>
+            <a href="#">Manage user</a>
+          </Dropdown.Item>
+          <Dropdown.Item asChild className={item({ type: 'item' })}>
+            <a href="#">Manage groups</a>
+          </Dropdown.Item>
+          <Dropdown.Item asChild className={item({ type: 'item' })}>
+            <a href="#">Manage apps</a>
+          </Dropdown.Item>
         </Dropdown.Content>
       </Dropdown.Portal>
     </Dropdown.Root>

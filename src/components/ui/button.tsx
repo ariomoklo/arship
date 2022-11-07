@@ -1,7 +1,7 @@
 import { cva, type VariantProps } from 'class-variance-authority'
 
 export const btn = cva(
-  "px-4 py-2 whitespace-nowrap text-sm", {
+  "px-4 py-2 whitespace-nowrap text-sm cursor-pointer", {
     variants: {
       intent: {
         base: "bg-transparent hover:text-white dark:hover:text-base-900 hover:bg-base-900 dark:hover:bg-white",
