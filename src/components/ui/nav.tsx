@@ -32,7 +32,7 @@ export function Nav () {
   }, searchInput.current ?? null)
 
   return (
-    <nav className="my-4 border-b border-b-base-200 dark:border-b-base-800">
+    <nav className="mt-4 border-b border-b-base-200 dark:border-b-base-800">
       <section className="flex justify-between content mb-2">
         <div className="grow font-bukit-bulan w-full">
           <h1 className="text-3xl text-brand">Arship</h1>

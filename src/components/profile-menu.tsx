@@ -1,9 +1,8 @@
 import * as Dropdown from '@radix-ui/react-dropdown-menu'
 import { cva } from 'class-variance-authority'
-import { useSession } from 'next-auth/react'
+import { useSession, signOut } from 'next-auth/react'
 import React from 'react'
 import { btn } from './ui/button'
-import { IChevronRight } from './ui/icons'
 
 const item = cva(
   'w-full text-base-900 dark:text-white', {
@@ -38,7 +37,7 @@ const ProfileMenu: React.FC = () => {
           </Dropdown.Item>
 
           <Dropdown.Item asChild className={item({ type: 'item' })}>
-            <a href="#">Sign Out</a>
+            <button onClick={() => signOut()} className="text-left">Sign Out</button>
           </Dropdown.Item>
 
           <Dropdown.Separator className='my-1 border-b border-b-base-200 dark:border-b-base-700' />
