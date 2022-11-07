@@ -2,6 +2,7 @@ import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import { Nav } from "./../components/ui/nav"
+import { Button } from "./../components/ui/button"
 import { signIn, signOut, useSession } from "next-auth/react";
 
 import { trpc } from "../utils/trpc";
@@ -51,12 +52,11 @@ const AuthShowcase: React.FC = () => {
       {secretMessage && (
         <p className="text-2xl text-blue-500">{secretMessage}</p>
       )}
-      <button
-        className="rounded-md border border-black px-4 py-2 text-xl shadow-lg hover:bg-primary-500 hover:text-black"
+      <Button intent="primary"
         onClick={sessionData ? () => signOut() : () => signIn()}
       >
         {isLoggedIn() ? "Sign out" : "Sign in"}
-      </button>
+      </Button>
     </div>
   );
 };
