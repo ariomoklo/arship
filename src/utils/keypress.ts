@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useLayoutEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 export type KeyStroke = {
   char: string
@@ -10,7 +10,7 @@ export type KeyStroke = {
 export const useKeyPress = (keys: KeyStroke, callback: (e: KeyboardEvent) => void, node: HTMLElement | null = null) => {
   // implement the callback ref pattern
   const callbackRef = useRef(callback);
-  useLayoutEffect(() => {
+  useEffect(() => {
     callbackRef.current = callback;
   });
 

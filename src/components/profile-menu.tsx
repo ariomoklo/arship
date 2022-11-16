@@ -16,7 +16,7 @@ const item = cva(
 )
 
 const content = cva(
-  'flex flex-col text-base-900 bg-white dark:bg-base-800 border border-base-200 dark:border-base-800 shadow-lg min-w-[220px] p-1'
+  'flex flex-col text-base-900 bg-white dark:bg-base-800 border border-base-200 dark:border-base-800 shadow-md min-w-[220px] p-1'
 )
 
 const ProfileMenu: React.FC = () => {
