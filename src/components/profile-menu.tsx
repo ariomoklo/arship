@@ -1,6 +1,7 @@
 import * as Dropdown from '@radix-ui/react-dropdown-menu'
 import { cva } from 'class-variance-authority'
 import { useSession, signOut } from 'next-auth/react'
+import Link from 'next/link'
 import React from 'react'
 import { btn } from './ui/button'
 
@@ -33,15 +34,15 @@ const ProfileMenu: React.FC = () => {
         <Dropdown.Content align='end' className={content()}>
 
           <Dropdown.Item asChild className={item({ type: 'item' })}>
-            <a href="#">Apps</a>
+            <Link href="/apps">Apps</Link>
           </Dropdown.Item>
 
           <Dropdown.Item asChild className={item({ type: 'item' })}>
-            <a href="#">Groups</a>
+            <Link href="/groups">Groups</Link>
           </Dropdown.Item>
 
           <Dropdown.Item asChild className={item({ type: 'item' })}>
-            <a href="#">Account Setting</a>
+            <Link href="/account">Account Setting</Link>
           </Dropdown.Item>
 
           <Dropdown.Separator className='my-1 border-b border-b-base-200 dark:border-b-base-700' />

@@ -33,25 +33,23 @@ h1 {
   font-family: Rubik;
   text-transform: capitalize;
   font-weight: 900;
-  word-spacing: .7rem;
+  word-spacing: .5rem;
 }
 
 h2,h3 {
   font-family: Rubik;
   text-transform: uppercase;
   font-weight: 700;
-  word-spacing: .7rem;
+  word-spacing: .2rem;
 }
 
 h4,h5,h6 {
   font-family: Rubik;
   text-transform: uppercase;
-  word-spacing: .7rem;
 }
 
 label {
   font-family: Rubik;
-  word-spacing: .7rem;
 }
 
 .text-brand {
