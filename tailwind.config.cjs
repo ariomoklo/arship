@@ -7,7 +7,8 @@ module.exports = {
     extend: {
       colors: {
         base: colors.neutral,
-        primary: colors.indigo
+        primary: colors.indigo,
+        link: colors.indigo[500]
       }
     },
   },

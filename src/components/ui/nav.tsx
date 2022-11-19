@@ -51,11 +51,17 @@ export function Nav () {
     }
   }, [router])
 
+
+  // change nav link on apps detail
+  const current = router.pathname
+  const { code: appCode } = router.query
+  const onAppDetails = appCode && current.startsWith('/apps/')
+
   return (
     <nav className="mt-4 border-b border-b-base-200 dark:border-b-base-800">
       <section className="flex justify-between content mb-2">
         <div className="grow flex items-center gap-3 font-bukit-bulan w-full">
-          <h1 className="text-3xl text-brand">Arship</h1>
+          <Link href="/"><h1 className="text-3xl text-brand">Arship</h1></Link>
           <AnimatePresence>
             {isPageLoad && (
               <motion.svg
@@ -78,9 +84,24 @@ export function Nav () {
       { isLoggedIn() && (
         <section className="flex justify-between content">
         <div className="flex -mb-px">
-          <NavTabItem text="Feeds" href="/" />
-          <NavTabItem text="Apps" href="/apps" />
-          <NavTabItem text="Groups" href="/groups" />
+          
+          { 
+            onAppDetails ?
+            <>
+              <NavTabItem text="< Apps" href="/apps" />
+              <NavTabItem text="Main" href={`/apps/${appCode}`} />
+              <NavTabItem text="Devs" href={`/apps/${appCode}/devs`} />
+              <NavTabItem text="Ops" href={`/apps/${appCode}/ops`} />
+            </>
+            :
+            <>
+              <NavTabItem text="Feeds" href="/" />
+              <NavTabItem text="Apps" href="/apps" />
+              <NavTabItem text="Groups" href="/groups" />
+            </>
+          }
+
+
         </div>
         <div className="flex justify-between items-center z-0">
           <ISearchLine className="flex-none w-4 h-4 inline-block -m-6 z-10" />

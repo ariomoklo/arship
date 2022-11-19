@@ -33,11 +33,15 @@ const ProfileMenu: React.FC = () => {
         <Dropdown.Content align='end' className={content()}>
 
           <Dropdown.Item asChild className={item({ type: 'item' })}>
-            <a href="#">Account Setting</a>
+            <a href="#">Apps</a>
           </Dropdown.Item>
 
           <Dropdown.Item asChild className={item({ type: 'item' })}>
-            <button onClick={() => signOut()} className="text-left">Sign Out</button>
+            <a href="#">Groups</a>
+          </Dropdown.Item>
+
+          <Dropdown.Item asChild className={item({ type: 'item' })}>
+            <a href="#">Account Setting</a>
           </Dropdown.Item>
 
           <Dropdown.Separator className='my-1 border-b border-b-base-200 dark:border-b-base-700' />
@@ -60,6 +64,13 @@ const ProfileMenu: React.FC = () => {
           <Dropdown.Item asChild className={item({ type: 'item' })}>
             <a href="#">Manage apps</a>
           </Dropdown.Item>
+
+          <Dropdown.Separator className='my-1 border-b border-b-base-200 dark:border-b-base-700' />
+
+          <Dropdown.Item asChild className={item({ type: 'item', class: 'bg-rose-500/25 hover:!bg-rose-500/75' })}>
+            <button onClick={() => signOut()} className="text-left">Sign Out</button>
+          </Dropdown.Item>
+
         </Dropdown.Content>
       </Dropdown.Portal>
     </Dropdown.Root>

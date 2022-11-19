@@ -1,5 +1,6 @@
 
 import { cva, type VariantProps } from 'class-variance-authority'
+import defaultAvatar from './../../../public/img/default-avatar.png'
 import Image from 'next/image'
 
 export const avatar = cva(
@@ -28,9 +29,22 @@ const DiceLoader = ({ src, width }: { src: string, width: number }) => {
 }
 
 export interface AvatarProps extends React.HTMLAttributes<HTMLButtonElement>, VariantProps<typeof avatar> {
-  seed: string
+  seed?: string
 }
 const Avatar: React.FC<AvatarProps> = ({ seed, size, ring, className }) => {
+
+  if (!seed) {
+    return <Image
+      src={defaultAvatar}
+      className={avatar({
+        size,
+        ring,
+        class:
+        className
+      })}
+      alt="User Avatar" />
+  }
+
   return <Image
     loader={DiceLoader}
     src={seed}
