@@ -15,7 +15,7 @@ const AppDevs: NextPage = () => {
           <h3>Timeline</h3>
           <p>Here showing list of cr sort by target date.</p>
 
-          <h3>Features Notes</h3>
+          <h3>Dev Notes</h3>
           <p>Devs team can add notes abount app features logic and etc. And can be tagged to spesific version update or change request. this feature to help developer add notes that easy to search when in need.</p>
         </div>
         <div className="flex-none w-56">
