@@ -88,10 +88,11 @@ export function Nav () {
           { 
             onAppDetails ?
             <>
-              <NavTabItem text="< Apps" href="/apps" />
               <NavTabItem text="Main" href={`/apps/${appCode}`} />
               <NavTabItem text="Devs" href={`/apps/${appCode}/devs`} />
               <NavTabItem text="Ops" href={`/apps/${appCode}/ops`} />
+              <NavTabItem text="Docs" href={`/apps/${appCode}/docs`} />
+              <NavTabItem text="Media" href={`/apps/${appCode}/media`} />
             </>
             :
             <>

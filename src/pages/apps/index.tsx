@@ -7,7 +7,7 @@ import { PrivateLayout } from "../../components/ui/layout";
 
 const Card = (props: { name: string, code: string, group?: string }) => {
   return (
-    <Link href={`/apps/${props.code}`} className="flex gap-4 items-center w-full bg-base-500/10 rounded-md hover:bg-primary-500/50 hover:scale-105 transition-all cursor-pointer overflow-hidden">
+    <Link href={`/apps/${props.code}`} className="flex gap-4 items-center w-full bg-base-500/10 hover:bg-primary-500/50 hover:scale-105 transition-all cursor-pointer overflow-hidden">
       <div className="flex-none prose prose-2xl">
         <Avatar size="custom" className="w-28 h-28" />
       </div>

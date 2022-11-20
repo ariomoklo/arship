@@ -7,8 +7,8 @@ export const avatar = cva(
   "inline-block", {
     variants: {
       size: {
-        small: "h-4 w-4",
-        normal: "h-8 w-8",
+        small: "h-8 w-8",
+        normal: "h-10 w-10",
         large: "h-12 w-12",
         custom: ""
       },
