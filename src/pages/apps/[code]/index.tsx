@@ -122,28 +122,35 @@ const AppDetail: NextPage = () => {
             <Avatar seed="ario" className="rounded-xl" size="small" />
             <div className="grow text-xs">
               <p className="m-0 leading-tight">Ario Widiatmoko</p>
-              <p className="text-base-500/50">Software Engineer</p>
+              <p className="text-base-500/75">Front-end Engineer</p>
             </div>
           </li>
           <li className="flex gap-2 items-center m-2">
-            <Avatar seed="ario" className="rounded-xl" size="small" />
+            <Avatar seed="rigen" className="rounded-xl" size="small" />
+            <div className="grow text-xs">
+              <p className="m-0 leading-tight">Rigen Wildanu Hadadi</p>
+              <p className="text-base-500/75">Back-end Engineer</p>
+            </div>
+          </li>
+          <li className="flex gap-2 items-center m-2">
+            <Avatar seed="zaid" className="rounded-xl" size="small" />
             <div className="grow text-xs">
               <p className="m-0 leading-tight">Muhammad Zaid Billah</p>
-              <p className="text-base-500/50">Support</p>
+              <p className="text-base-500/75">Support</p>
             </div>
           </li>
           <li className="flex gap-2 items-center m-2">
-            <Avatar seed="ario" className="rounded-xl" size="small" />
+            <Avatar seed="yusran" className="rounded-xl" size="small" />
             <div className="grow text-xs">
               <p className="m-0 leading-tight">Mas Yusran</p>
-              <p className="text-base-500/50">QA Engineer</p>
+              <p className="text-base-500/75">QA Engineer</p>
             </div>
           </li>
           <li className="flex gap-2 items-center m-2">
-            <Avatar seed="ario" className="rounded-xl" size="small" />
+            <Avatar seed="burhan" className="rounded-xl" size="small" />
             <div className="grow text-xs">
               <p className="m-0 leading-tight">Mas Burhan</p>
-              <p className="text-base-500/50">Business Analyst</p>
+              <p className="text-base-500/75">Business Analyst</p>
             </div>
           </li>
           <li>
