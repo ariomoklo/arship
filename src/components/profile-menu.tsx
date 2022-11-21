@@ -4,6 +4,7 @@ import { useSession, signOut } from 'next-auth/react'
 import Link from 'next/link'
 import React from 'react'
 import { btn } from './ui/button'
+import { ArrowDropDownLine } from './ui/icons'
 
 const item = cva(
   'w-full text-base-900 dark:text-white', {
@@ -27,7 +28,10 @@ const ProfileMenu: React.FC = () => {
   return (
     <Dropdown.Root>
       <Dropdown.Trigger asChild>
-        <div className={btn({ uppercase: false, class: 'border border-transparent data-[state=open]:border-primary-500' })}>{session?.user.name}</div>
+        <div className={btn({ uppercase: false, size: 'custom', class: 'pl-4 pr-2 py-2 text-sm border border-transparent data-[state=open]:border-primary-500' })}>
+          <span>{session?.user.name}</span>
+          <ArrowDropDownLine className='w-5 h-5 inline-block ml-1'/>
+        </div>
       </Dropdown.Trigger>
 
       <Dropdown.Portal className='z-30'>

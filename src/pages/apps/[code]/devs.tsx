@@ -1,5 +1,6 @@
 import type { NextPage } from "next";
 import { AppLayout } from "../../../components/apps/layout";
+import RestApiView from "../../../components/apps/restapi/view";
 import { Button } from "../../../components/ui/button";
 
 const AppDevs: NextPage = () => {
@@ -13,10 +14,13 @@ const AppDevs: NextPage = () => {
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus iste dolores vero maxime earum. Optio repellat illum amet doloribus sed et. Nulla eligendi consectetur ex pariatur? Cumque non fugiat quasi rerum temporibus blanditiis voluptatum minus perspiciatis velit a, dolor reiciendis aut assumenda consequuntur harum culpa dicta totam voluptates doloremque quam.</p>
 
           <h3>REST API</h3>
-          <p>Table with pages of documentation about rest api</p>
+          <RestApiView />
 
-          <h3>DevLog</h3>
-          <p>[Table] Devs team can add notes abount app features logic and etc. And can be tagged to spesific version update or change request. this feature to help developer add notes that easy to search when in need.</p>
+          <h3>Features Log</h3>
+          <p>[Table] that listing every app features / pages that can be linked to CR. Also describing the features quirk that need to be remembered. This should be usefull when needed to search note or logic related to the features.</p>
+
+          <h3>QA Test</h3>
+          <p>Table that listing QA test result linked per Feature / CR</p>
         </div>
         <div className="flex-none w-56">
 

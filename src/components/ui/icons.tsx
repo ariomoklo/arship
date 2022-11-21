@@ -29,3 +29,34 @@ export function Pencil(props: SVGProps<SVGSVGElement>) {
     <svg width="1em" height="1em" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="m12.9 6.858l4.242 4.243L7.242 21H3v-4.243l9.9-9.9zm1.414-1.414l2.121-2.122a1 1 0 0 1 1.414 0l2.829 2.829a1 1 0 0 1 0 1.414l-2.122 2.121l-4.242-4.242z"></path></svg>
   )
 }
+
+export function ArrowDropDownLine(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg width="1em" height="1em" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="m12 15l-4.243-4.243l1.415-1.414L12 12.172l2.828-2.829l1.415 1.414z"></path></svg>
+  )
+}
+
+export function ExchangeLine(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg width="1em" height="1em" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10s-4.477 10-10 10zm0-2a8 8 0 1 0 0-16a8 8 0 0 0 0 16zm-5-7h9v2h-4v3l-5-5zm5-4V6l5 5H8V9h4z"></path></svg>
+  )
+}
+
+export function FolderLine(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg width="1em" height="1em" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="M12.414 5H21a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h7.414l2 2zM4 7v12h16V7H4z"></path></svg>
+  )
+}
+
+export function PlayMiniFill(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg width="1em" height="1em" viewBox="0 0 24 24" {...props}><path fill="currentColor" d="m7.752 5.439l10.508 6.13a.5.5 0 0 1 0 .863l-10.508 6.13A.5.5 0 0 1 7 18.128V5.871a.5.5 0 0 1 .752-.432z"></path></svg>
+  )
+}
+
+
+export function CircleFill(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg width="1em" height="1em" viewBox="0 0 24 24" {...props}><circle cx="12" cy="12" r="10" fill="currentColor"></circle></svg>
+  )
+}

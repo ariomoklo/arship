@@ -37,6 +37,8 @@ export const AppLayout: React.FC<AppLayoutProps> = ({ children, pageTitle }) => 
       <AppHeader />
       
       {children}
+
+      <span className="block mb-48"></span>
     </PrivateLayout>
   )
 }
