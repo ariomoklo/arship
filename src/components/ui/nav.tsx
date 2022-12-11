@@ -21,7 +21,7 @@ function NavTabItem ({ text, href }: { text: string, href: string}) {
 } 
 
 export function Nav () {
-  const { data: session } = useSession()
+  const { data: session, status } = useSession()
   const isLoggedIn = () => session?.user !== undefined
   const searchInput = useRef<HTMLInputElement>(null)
 
@@ -76,9 +76,11 @@ export function Nav () {
             )}
           </AnimatePresence>
         </div>
-        <div className="flex">
-          { isLoggedIn() ? <ProfileMenu/> : <Button onClick={() => signIn()}>Sign-In</Button> }
-        </div>
+        {
+          status !== "loading" && <div className="flex">
+            { isLoggedIn() ? <ProfileMenu/> : <Button onClick={() => signIn()}>Sign-In</Button> }
+          </div>
+        }
       </section>
 
       { isLoggedIn() && (

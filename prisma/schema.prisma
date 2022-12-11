@@ -9,7 +9,8 @@ generator client {
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
-  referentialIntegrity = "prisma" // Only needed if using planetScale
+  // referentialIntegrity = "prisma" // Only needed if using planetScale
+  relationMode = "prisma" // Only needed if using planetScale
 }
 
 model Example {
@@ -35,6 +36,7 @@ model Account {
   user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([provider, providerAccountId])
+  @@index([id, userId])
 }
 
 model Session {
@@ -43,16 +45,23 @@ model Session {
   userId       String
   expires      DateTime
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([id, userId])
 }
 
 model User {
   id            String    @id @default(cuid())
   name          String?
+  role          String    @default("general")
   email         String?   @unique
   emailVerified DateTime?
   image         String?
   accounts      Account[]
   sessions      Session[]
+  groups        Group[]
+  apps          App[]
+
+  @@index([id])
 }
 
 model VerificationToken {
@@ -61,4 +70,77 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+// Here start Arship scheme
+
+model Group {
+  id  String @id @default(cuid())
+  name  String @unique
+  created DateTime @default(now())
+  createdBy String
+  members User[]
+  apps App[]
+}
+
+model App {
+  code String @id
+  name String
+  icon String
+  site String?
+  vpn String?
+  desc String? @db.LongText()
+  onboarding String? @db.LongText()
+  created DateTime @default(now())
+  createdBy String
+  collabs User[]
+  apiPages ApiPages[]
+  envs AppEnv[]
+  gid String
+  groups Group @relation(fields: [gid], references: [id])
+
+  @@index([code, gid])
+}
+
+model AppEnv {
+  id String @id @default(cuid())
+  name String
+  variables AppEnvVar[]
+  app App @relation(fields: [appId], references: [code])
+  appId String
+
+  @@index([id, appId])
+}
+
+model AppEnvVar {
+  id String @id @default(cuid())
+  key String
+  value Json
+  env AppEnv @relation(fields: [envid], references: [id])
+  envid String
+
+  @@index([id, envid])
+}
+
+enum HttpMethod {
+  GET
+  POST
+  PUT
+  PATCH
+  DELETE
+  OPTION
+}
+
+model ApiPages {
+  id String @id @default(cuid())
+  route String
+  method HttpMethod @default(GET)
+  output Json
+  input Json?
+  headers Json?
+  params Json?
+  app App @relation(fields: [appId], references: [code])
+  appId String
+
+  @@index([id, appId])
 }

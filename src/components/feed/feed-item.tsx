@@ -1,5 +1,5 @@
 import type { User } from "next-auth"
-import Avatar from "../ui/avatar"
+import { Avatar } from "../ui/images"
 
 export interface FeedItemProps {
   user: User

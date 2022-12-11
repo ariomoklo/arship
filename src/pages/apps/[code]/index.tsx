@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { AppLayout } from "../../../components/apps/layout";
-import Avatar from "../../../components/ui/avatar";
+import { Avatar } from "../../../components/ui/images";
 import { Button } from "../../../components/ui/button";
 import { FileDownload, Links, Pencil } from "../../../components/ui/icons";
 
